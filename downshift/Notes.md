@@ -32,3 +32,5 @@ Instead of wiring this onClick selectItem we can instead do getItemProps, it req
 ```
 
 Cant visually see the highlighted item => Need `highlightedIndex`
+
+4 items of state in downshift: highlightedIndex, selectedItem, isOpen, inputValue
