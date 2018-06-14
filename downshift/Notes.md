@@ -34,3 +34,12 @@ Instead of wiring this onClick selectItem we can instead do getItemProps, it req
 Cant visually see the highlighted item => Need `highlightedIndex`
 
 4 items of state in downshift: highlightedIndex, selectedItem, isOpen, inputValue
+
+If set like this isOpen and inputValue won't change because we are responsible for the hardcoded values
+```
+<Downshift isOpen={true} inputValue='luke' >
+```
+
+stateReducer is preferable
+
+We are responsible for rendering so can use styled components, motion etc
