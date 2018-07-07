@@ -4,3 +4,5 @@ this.props.mutate is a promise
 
 Mutation doesn't automatically refetch data => `refetchQuereries: [{ query }]`
 Can use `this.props.data.refetch()` if the component knows about the query
+
+Doesnt need to make new queries, can just modify existing ones
