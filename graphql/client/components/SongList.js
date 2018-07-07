@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 import { Link } from "react-router";
 import { graphql } from "react-apollo";
+import { Link } from "react-router";
+import query from "../queries/FetchSongs";
 
-import query from '../queries/FetchSongs'
+import query from "../queries/FetchSongs";
 
 class SongList extends Component {
   renderSongs() {
@@ -28,4 +30,12 @@ class SongList extends Component {
   }
 }
 
-export default graphql(query)(SongList);
+const mutation = gql`
+  mutation DeleteSong($id: ID) {
+    deleteSong(id: $id) {
+      id
+    }
+  }
+`;
+
+export default graphql(mutation)(graphql(query)(SongList));
