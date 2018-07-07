@@ -4,17 +4,20 @@ import gql from "graphql-tag";
 
 class LyricList extends Component {
   onLike(id) {
-    console.log(id);
+    this.props.mutate({
+      variables: { id }
+    });
   }
 
   renderLyrics() {
-    return this.props.lyrics.map(({ id, content }) => {
+    return this.props.lyrics.map(({ id, content, likes }) => {
       return (
         <li key={id} className="collection-item">
           {content}
           <i className="material-icons" onClick={() => this.onLike(id)}>
             thumb_up
           </i>
+          {likes}
         </li>
       );
     });
