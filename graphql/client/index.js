@@ -4,14 +4,14 @@ import { Router, Route, hashHistory, IndexRoute } from "react-router";
 import ApolloClient from "apollo-client";
 import { ApolloProvider } from "react-apollo";
 
-import './style/style.css'
+import "./style/style.css";
 import App from "./components/App";
 import SongList from "./components/SongList";
-import SongCreate from './components/SongCreate'
-import SongDetail from './components/SongDetail'
+import SongCreate from "./components/SongCreate";
+import SongDetail from "./components/SongDetail";
 
 const client = new ApolloClient({
-
+  dataIdFromObject: o => o.id
 });
 
 const Root = () => {
